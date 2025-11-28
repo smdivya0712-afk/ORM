@@ -1,13 +1,19 @@
 from django.db import models
 from django.contrib import admin
-class Student(models.Model):
-	Name=models.CharField(max_length=100)
-	Reference_Number=models.IntegerField()
-	Gender=models.CharField(max_length=1)
-	Department=models.CharField(max_length=10)
-	Date_of_Birth=models.DateField()
-	Phone_Number=models.IntegerField()
-	marksPercentage=models.FloatField()
-	email=models.EmailField()
-class StudentAdmin(admin.ModelAdmin):
-	list_display=["Name","Reference_Number","Gender","Department"]
+class product(models.Model):
+	product_Name=models.CharField(max_length=100)
+	product_id=models.IntegerField()
+	category=models.CharField(max_length=100)
+	brand=models.CharField(max_length=100)
+	price=models.FloatField()
+	stock=models.IntegerField()
+    rating=models.FloatField()
+class ProductAdmin(admin.ModelAdmin):
+    list_display=[
+        "product_name",
+        "product_id",
+        "category",
+        "brand",
+        "price",
+        "stocks",
+        "rating"]
